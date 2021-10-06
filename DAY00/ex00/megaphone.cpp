@@ -19,7 +19,6 @@ int main(int ac, char **av)
 			std::cout << (char)std::toupper(av[i][c]);
 		if (av[i + 1] != NULL)
 			std::cout << " ";
-		// std::cout << av[i] << std::endl;
 	}
 	std::cout << std::endl;
 	return (0);
