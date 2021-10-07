@@ -6,7 +6,12 @@
 
 class	PhoneBook
 {
-	
-}
+	Contact contact[8];
+
+	public:
+		PhoneBook( void );
+		void add_contact(int);
+		void search();
+};
 
 #endif
