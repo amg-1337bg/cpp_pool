@@ -4,11 +4,13 @@
 # include <iostream>
 # include "contact.hpp"
 # include <iomanip>
+# include <string>
 
 class	PhoneBook
 {
 	Contact contact[8];
 	int		current;
+	int		length;
 
 	public:
 		PhoneBook( void );

@@ -20,4 +20,4 @@ int main(void)
 			std::cout << "ERROR" << std::endl;
 	}
 	return(0);
-}
+} 
