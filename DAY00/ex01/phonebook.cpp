@@ -15,15 +15,15 @@ void	PhoneBook::add_contact()
 	std::string darkest_secret;
 
 	std::cout << "First Name : ";
-	std::cin >> first_name;
+	std::getline(std::cin, first_name);
 	std::cout << "Last Name : ";
-	std::cin >> last_name;
+	std::getline(std::cin, last_name);
 	std::cout << "NickName : ";
-	std::cin >> nickname;
+	std::getline(std::cin, nickname);
 	std::cout << "Phone Number : ";
-	std::cin >> phone_number;
+	std::getline(std::cin, phone_number);
 	std::cout << "Darkest Secret : ";
-	std::cin >> darkest_secret;
+	std::getline(std::cin,  darkest_secret);
 
 	if (this->length != 8)
 		this->length++;
@@ -34,29 +34,53 @@ void	PhoneBook::add_contact()
 		this->current = 0;
 }
 
+void trancate(std::string str)
+{
+	int i;
+
+	i = -1;
+	if (str.length() >= 10)
+	{
+		while (++i < 10)
+			std::cout << str[i];
+		std::cout << ".";
+	}
+	else
+		std::cout << std::setw(10) << str;
+}
+
 void	PhoneBook::search()
 {
 	int i;
 	int index;
+	std::string text;
 
 	i = -1;
 	std::cout << std::setw(10) << "index |";
-	std::cout << std::setw(10) << "First Name|";
-	std::cout << std::setw(10) << "Last Name|";
-	std::cout << std::setw(10) << "nickname";
+	std::cout << std::setw(10) << "First Name";
+	std::cout << std::setw(10) << "|Last Name";
+	std::cout << std::setw(10) << "| nickname";
 	std::cout << std::endl;
 	while (++i < this->length)
 	{
 		std::cout << std::setw(10) << contact[i].getindex();
-		std::cout << std::setw(10) << contact[i].getfname();
-		std::cout << std::setw(10) << contact[i].getlname();
-		std::cout << std::setw(10) << contact[i].getnickname();
+		trancate(contact[i].getfname());
+		trancate(contact[i].getlname());
+		trancate(contact[i].getnickname());
+		// std::cout << std::setw(10) << trancate(contact[i].getfname());
+		// std::cout << std::setw(10) << trancate(contact[i].getlname());
+		// std::cout << std::setw(10) << trancate(contact[i].getnickname());
 		std::cout << std::endl;
 	}
 	std::cout << "Choose an index: ";
-	index = 0;
-	if (index < 0 || index > 7 || index >= this->length)
+	std::cin >> index;
+	if (std::cin.fail() || index < 0 || index > 7 || index >= this->length)
+	{
 		std::cout << "ERROR" << std::endl;
+		std::cin.clear();
+		std::cin.ignore(INT_MAX,'\n');
+		return ;
+	}
 	else
 	{
 		std::cout << "First Name : " << this->contact[index].getfname() << std::endl;
@@ -64,5 +88,7 @@ void	PhoneBook::search()
 		std::cout << "NickName : " << this->contact[index].getnickname() << std::endl;
 		std::cout << "Phone Number : " << this->contact[index].getphonenumber() << std::endl;
 		std::cout << "Darkest Secret : " << this->contact[index].getfdarkestsecret() << std::endl;
+		std::cin.clear();
+		std::cin.ignore(INT_MAX,'\n');
 	}
 }

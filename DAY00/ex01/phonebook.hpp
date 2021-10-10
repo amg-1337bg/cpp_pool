@@ -5,6 +5,7 @@
 # include "contact.hpp"
 # include <iomanip>
 # include <string>
+# include <climits>
 
 class	PhoneBook
 {
