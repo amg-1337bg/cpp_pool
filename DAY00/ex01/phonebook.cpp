@@ -56,8 +56,8 @@ void	PhoneBook::search()
 	std::string text;
 
 	i = -1;
-	std::cout << std::setw(10) << "index |";
-	std::cout << std::setw(10) << "First Name";
+	std::cout << std::setw(10) << "index";
+	std::cout << std::setw(10) << "|First Name";
 	std::cout << std::setw(10) << "|Last Name";
 	std::cout << std::setw(10) << "| nickname";
 	std::cout << std::endl;
@@ -67,9 +67,6 @@ void	PhoneBook::search()
 		trancate(contact[i].getfname());
 		trancate(contact[i].getlname());
 		trancate(contact[i].getnickname());
-		// std::cout << std::setw(10) << trancate(contact[i].getfname());
-		// std::cout << std::setw(10) << trancate(contact[i].getlname());
-		// std::cout << std::setw(10) << trancate(contact[i].getnickname());
 		std::cout << std::endl;
 	}
 	std::cout << "Choose an index: ";
