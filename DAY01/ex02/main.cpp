@@ -3,7 +3,6 @@
 int main()
 {
 	std::string str = "HI THIS IS BRAIN";
-	std::string test = "sddfsd";
 
 	std::string *stringPTR = &str;
 	std::string &stringREF = str;
@@ -14,8 +13,6 @@ int main()
 
 	std::cout << *stringPTR << std::endl;
 	std::cout << stringREF << std::endl;
-	stringREF = test;
 
-	std::cout << stringREF << std::endl;
 	return (0);
 }
