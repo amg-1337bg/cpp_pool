@@ -1,8 +1,8 @@
-NAME= human_attack
+NAME= replace
 
 FLAGS= -Wall -Werror -Wall -std=c++98
 
-SRC= main.cpp HumanA.cpp HumanB.cpp Weapon.cpp
+SRC= main.cpp
 
 all: $(NAME)
 
