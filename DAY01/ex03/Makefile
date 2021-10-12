@@ -2,7 +2,7 @@ NAME= refpro
 
 FLAGS= -Wall -Werror -Wall -std=c++98
 
-SRC= main.cpp
+SRC= main.cpp HumanA.cpp HumanB.cpp Weapon.cpp
 
 all: $(NAME)
 

@@ -1,18 +1,19 @@
-#ifndef HUMANEb_H
-#define HUMANEb_H
+#ifndef HUMANB_H
+#define HUMANB_H
 
 #include "Weapon.hpp"
 
-class HumaneB
+class HumanB
 {
 	private:
 		Weapon weapon;
 		std::string name;
 	public:
-		HumaneB();
-		HumaneB(std::string, Weapon);
-		~HumaneB();
+		HumanB();
+		HumanB(std::string);
+		~HumanB();
 		void	attack();
+		void	setWeapon(const Weapon &);
 };
 
 

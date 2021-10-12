@@ -8,7 +8,7 @@ class Weapon
 	private:
 		std::string type;
 	public:
-		// Weapon();
+		Weapon();
 		Weapon(std::string);
 		~Weapon();
 		std::string	getType();
