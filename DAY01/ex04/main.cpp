@@ -11,22 +11,26 @@ int main(int ac, char **av)
 	std::string	write;
 	int			occur;
 
-	s1 = av[2];
-	s2 = av[3];
-	filename = av[1];
 	if (ac != 4)
 	{
 		std::cout << "Error!" << std::endl;
 		return (1);
 	}
+	s1 = av[2];
+	s2 = av[3];
+	filename = av[1];
 	if(s1.empty() || s2.empty() || filename.empty())
 	{
 		std::cout << "one of the argument is empty!" << std::endl;
 		return (1);
 	}
 	filenamereplace = filename + ".replace";
-	std::cout << filenamereplace << std::endl;
 	std::ifstream ifstr(filename);
+	if(ifstr.fail())
+	{
+		std::cout << "Error while opening file" << std::endl;
+		return (1);
+	}
 	std::ofstream ofstream(filenamereplace);
 	while (std::getline(ifstr, read))
 	{
@@ -37,7 +41,10 @@ int main(int ac, char **av)
 			read.erase(0, occur + s1.length());
 		}
 		write.append(read, 0, read.length());
-		ofstream << write << std::endl;
+		if (ifstr.eof())
+			ofstream << write;
+		else
+			ofstream << write << std::endl;
 		write.clear();
 	}
 	return (0);
