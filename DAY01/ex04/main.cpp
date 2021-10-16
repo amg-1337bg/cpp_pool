@@ -41,7 +41,10 @@ int main(int ac, char **av)
 			read.erase(0, occur + s1.length());
 		}
 		write.append(read, 0, read.length());
-		ofstream << write << std::endl;
+		if (ifstr.eof())
+			ofstream << write;
+		else
+			ofstream << write << std::endl;
 		write.clear();
 	}
 	return (0);
