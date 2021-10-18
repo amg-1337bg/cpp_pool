@@ -1,8 +1,8 @@
-NAME= replace
+NAME= karen
 
 FLAGS= -Wall -Werror -Wall
 
-SRC= main.cpp
+SRC= main.cpp karen.cpp
 
 all: $(NAME)
 

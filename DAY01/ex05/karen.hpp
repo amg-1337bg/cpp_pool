@@ -14,7 +14,7 @@ class	karen
 	
 	public:
 		void	complain(std::string level);
-}
+};
 
 
 #endif

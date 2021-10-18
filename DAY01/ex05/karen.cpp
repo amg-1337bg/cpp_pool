@@ -15,12 +15,16 @@ void	karen::warning( void )
 	std::cout << "WARNING" << std:: endl; 
 }
 
-void	kare::error( void )
+void	karen::error( void )
 {
 	std::cout << "ERROR" << std::endl;
 }
 
 void	karen::complain(std::string level)
 {
-	
+	void (*arr)(void)[] = { &(karen::debug), &(this->info()), &(this->warning()), &(this->error())};
+
+	int i = -1;
+	while (++i < 4)
+		arr[i];
 }
