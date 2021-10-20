@@ -3,8 +3,7 @@
 
 #include <iostream>
 
-
-class	karen
+class	Karen
 {
 	private:
 		void	debug( void );
@@ -13,6 +12,7 @@ class	karen
 		void	error( void );
 	
 	public:
+		Karen();
 		void	complain(std::string level);
 };
 

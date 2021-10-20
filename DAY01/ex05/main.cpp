@@ -1,8 +1,9 @@
 #include "karen.hpp"
 
-int	main()
+int main ()
 {
-	karen k;
+	Karen k;
 
 	k.complain("test");
+	return (0);
 }

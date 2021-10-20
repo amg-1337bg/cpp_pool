@@ -26,9 +26,9 @@ int main(int ac, char **av)
 	}
 	filenamereplace = filename + ".replace";
 	std::ifstream ifstr(filename);
-	if(ifstr.fail())
+	if (ifstr.fail())
 	{
-		std::cout << "Error while opening file" << std::endl;
+		std::cout << "Error While opening the file" << std::endl;
 		return (1);
 	}
 	std::ofstream ofstream(filenamereplace);
