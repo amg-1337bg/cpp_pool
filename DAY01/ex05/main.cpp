@@ -4,6 +4,6 @@ int main ()
 {
 	Karen k;
 
-	k.complain("test");
+	k.complain("DEBUG");
 	return (0);
 }
