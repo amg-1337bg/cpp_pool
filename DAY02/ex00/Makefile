@@ -1,4 +1,4 @@
-NAME= zombie
+NAME= fixed
 
 FLAGS= -Wall -Werror -Wall -std=c++98
 
