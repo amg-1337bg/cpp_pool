@@ -43,23 +43,22 @@ Fixed	&Fixed::operator =(const Fixed &a)
 
 Fixed::Fixed(const int i)
 {
-	this->f = i * 256;
+	this->f = i * (1 << numfrac);
 }
 
-Fixed::Fixed(const float f)
+Fixed::Fixed(const float fl)
 {
-	this->f = f * 256;
-	// this->f = roundf(f);
+	f = roundf((fl * (1 << numfrac)));
 }
 
 float Fixed::toFloat( void ) const
 {
-	return ();
+	return ((float)f / (1 << numfrac));
 }
 
 int	Fixed::toInt( void ) const
 {
-	return (f);
+	return (f / (1 << numfrac));
 }
 
 std::ostream &operator << (std::ostream &os, const Fixed &f)
