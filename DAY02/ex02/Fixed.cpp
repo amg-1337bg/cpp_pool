@@ -142,16 +142,36 @@ Fixed	&Fixed::operator ++ (void)
 	f++;
 	return(*this);
 }
-Fixed	&Fixed::operator ++ (int)
+Fixed	Fixed::operator ++ (int)
 {
-	return ();
+	Fixed ff (*this);
+	this->f++;
+	return (ff);
 }
 Fixed	&Fixed::operator -- (void)
 {
 	--f;
 	return (*this);
 }
-Fixed	&Fixed::operator -- (int)
+
+Fixed	Fixed::operator -- (int)
 {
-	return ();
+	Fixed ff(*this);
+	f--;
+	return (ff);
 }
+
+// Fixed &Fixed::min (Fixed &f1, const Fixed &f2)
+// {
+// 	if(f1 > f2)
+// 		return (f2);
+// 	else
+// 		return (f1);
+// }
+// Fixed &Fixed::max (Fixed &f1, const Fixed &f2)
+// {
+// 	if (f1 > f2)
+// 		return (f1);
+// 	else
+// 		return (f2);
+// }

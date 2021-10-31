@@ -39,9 +39,12 @@ class	Fixed
 		Fixed	& operator / (const Fixed&);
 
 		Fixed	& operator ++( void );
-		Fixed	& operator ++( int );
+		Fixed	operator ++( int );
 		Fixed	& operator --( void );
-		Fixed	& operator --( int );
+		Fixed	operator --( int );
+
+		// static Fixed	&min(Fixed&, const Fixed&);
+		// static Fixed	&max(Fixed&, const Fixed&);
 };
 std::ostream &operator << (std::ostream &os, const Fixed &f);
 
