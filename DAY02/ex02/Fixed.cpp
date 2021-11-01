@@ -71,37 +71,37 @@ std::ostream &operator << (std::ostream &os, const Fixed &f)
 
 // COMPARISON OPERATORS
 
-bool	Fixed::operator > (const Fixed &f)
+bool	Fixed::operator > (const Fixed &f) const
 {
 	if (this->f > f.f)
 		return (true);
 	return (false);
 }
-bool	Fixed::operator < (const Fixed &f)
+bool	Fixed::operator < (const Fixed &f) const
 {
 	if (this->f < f.f)
 		return (true);
 	return (false);
 }
-bool	Fixed::operator >= (const Fixed &f)
+bool	Fixed::operator >= (const Fixed &f) const
 {
 	if (this->f > f.f || this->f == f.f)
 		return (true);
 	return (false);
 }
-bool	Fixed::operator <= (const Fixed &f)
+bool	Fixed::operator <= (const Fixed &f) const
 {
 	if (this->f < f.f || this->f == f.f)
 		return (true);
 	return (false);
 }
-bool	Fixed::operator == (const Fixed &f)
+bool	Fixed::operator == (const Fixed &f) const
 {
 	if (this->f == f.f)
 		return (true);
 	return (false);
 }
-bool	Fixed::operator != (const Fixed &f)
+bool	Fixed::operator != (const Fixed &f) const
 {
 	if (this->f != f.f)
 		return (true);
@@ -161,17 +161,34 @@ Fixed	Fixed::operator -- (int)
 	return (ff);
 }
 
-// Fixed &Fixed::min (Fixed &f1, const Fixed &f2)
-// {
-// 	if(f1 > f2)
-// 		return (f2);
-// 	else
-// 		return (f1);
-// }
-// Fixed &Fixed::max (Fixed &f1, const Fixed &f2)
-// {
-// 	if (f1 > f2)
-// 		return (f1);
-// 	else
-// 		return (f2);
-// }
+Fixed &Fixed::min (Fixed &f1, Fixed &f2)
+{
+	if(f1 > f2)
+		return (f2);
+	else
+		return (f1);
+}
+
+const Fixed &Fixed::min (const Fixed &f1, const Fixed &f2)
+{
+	if(f1 > f2)
+		return (f2);
+	else
+		return (f1);
+}
+
+Fixed &Fixed::max (Fixed &f1, Fixed &f2)
+{
+	if (f1 > f2)
+		return (f1);
+	else
+		return (f2);
+}
+
+const	Fixed &Fixed::max (const Fixed &f1, const Fixed &f2)
+{
+	if (f1 > f2)
+		return (f1);
+	else
+		return (f2);
+}
