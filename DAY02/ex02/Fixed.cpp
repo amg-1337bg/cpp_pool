@@ -9,8 +9,8 @@ Fixed::Fixed()
 Fixed::Fixed(const Fixed &a)
 {
 	std::cout << "Copy Constructor Called" << std::endl;
-	// this->f = a.getRawBits();
-	*this = a;
+	this->f = a.getRawBits();
+	// *this = a;
 }
 
 Fixed::~Fixed()
@@ -110,25 +110,25 @@ bool	Fixed::operator != (const Fixed &f) const
 
 // ARITHMETIC OPERATORS
 
-Fixed	&Fixed:: operator + (const Fixed& f1)
+Fixed	Fixed:: operator + (const Fixed& f1)
 {
 	float ff = this->toFloat() + f1.toFloat();
 	*this = Fixed(ff);
 	return (*this);
 }
-Fixed	&Fixed::operator - (const Fixed& f1)
+Fixed	Fixed::operator - (const Fixed& f1)
 {
 	float ff = this->toFloat() - f1.toFloat();
 	*this = Fixed(ff);
 	return (*this);
 }
-Fixed	&Fixed:: operator * (const Fixed& f1)
+Fixed	Fixed:: operator * (const Fixed& f1)
 {
 	float ff = this->toFloat() * f1.toFloat();
 	*this = Fixed(ff);
 	return (*this);
 }
-Fixed	&Fixed:: operator / (const Fixed& f1)
+Fixed	Fixed:: operator / (const Fixed& f1)
 {
 	float ff = this->toFloat() / f1.toFloat();
 	*this = Fixed(ff);
@@ -163,6 +163,7 @@ Fixed	Fixed::operator -- (int)
 
 Fixed &Fixed::min (Fixed &f1, Fixed &f2)
 {
+	
 	if(f1 > f2)
 		return (f2);
 	else
