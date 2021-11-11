@@ -24,7 +24,10 @@ int main(int ac, char **av)
 		std::cout << "one of the argument is empty!" << std::endl;
 		return (1);
 	}
-	filenamereplace = filename + ".replace";
+	filenamereplace = filename;
+	for (int i = 0; i < filename.length(); i++)
+		filenamereplace[i] = toupper(filenamereplace[i]);
+	filenamereplace += ".replace";
 	std::ifstream ifstr(filename);
 	if (ifstr.fail())
 	{

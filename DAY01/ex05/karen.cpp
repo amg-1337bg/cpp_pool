@@ -24,18 +24,17 @@ void	Karen::error( void )
 
 void	Karen::complain(std::string level)
 {
-	void (Karen::*teste [])() = {&Karen::debug, &Karen::info, &Karen::warning, &Karen::error};
-	std::string check[] = { "DEBUG", "INFO", "WARNING", "ERROR"};
 	int i;
+	void (Karen::*teste [])() = { &Karen::debug, &Karen::info, &Karen::warning, &Karen::error};
+	std::string str[4] = {"DEBUG" , "INFO", "WARNING", "ERROR"};
 
 	i = -1;
 	while (++i < 4)
 	{
-		if (check[i] == level)
+		if (level == str[i])
 		{
 			(this->*teste[i])();
-			break;
+			break ;
 		}
 	}
-
 }
