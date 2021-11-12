@@ -51,13 +51,3 @@ void	ScavTrap::attack(std::string const &target)
 {
 	std::cout << "ScavTrap " << Name << " attack " << target << ", causing " << Attackdamage << " points of damage!" << std::endl;
 }
-
-void	ScavTrap::takeDamage(unsigned int amount)
-{
-	std::cout << "ScavTrap " << Name << " Taken Damage of " << amount << std::endl;
-}
-
-void	ScavTrap::beRepaired(unsigned int amount)
-{
-	std::cout << "ScavTrap " << Name << " Gets repaired by " << amount << std::endl;
-}

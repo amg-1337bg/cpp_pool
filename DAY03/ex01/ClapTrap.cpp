@@ -47,10 +47,10 @@ void	ClapTrap::attack(std::string const &target)
 
 void	ClapTrap::takeDamage(unsigned int amount)
 {
-	std::cout << "ClapTrap " << Name << " Taken Damage of " << amount << std::endl;
+	std::cout << Name << " Taken Damage of " << amount << std::endl;
 }
 
 void	ClapTrap::beRepaired(unsigned int amount)
 {
-	std::cout << "ClapTrap " << Name << " Gets repaired by " << amount << std::endl;
+	std::cout << Name << " Gets repaired by " << amount << std::endl;
 }

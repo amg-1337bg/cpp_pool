@@ -29,7 +29,8 @@ void	Fixed::setRawBits(int const raw)
 	this->f = raw;
 }
 
-Fixed	&Fixed::operator =(const Fixed &a)
+Fixed	&Fixed::operator 
+=(const Fixed &a)
 {
 	std::cout << "Assignation Operator Called" << std::endl;
 	this->setRawBits(a.getRawBits());
