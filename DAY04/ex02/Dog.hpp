@@ -1,23 +1,21 @@
-# ifndef CAT_H
-# define CAT_H
+#ifndef DOG_H
+#define	DOG_H
 
 #include "Animal.hpp"
 #include "Brain.hpp"
 
-class	Cat : public Animal
+class	Dog :  public Animal
 {
 	private:
 		Brain *brain;
 	public :
-		Cat();
-		Cat(const Cat&);
-		~Cat();
-		
-		Cat	&operator= (const	Cat&);
+		Dog();
+		Dog(const Dog&);
+		~Dog();
 
+		Dog	&operator= (const Dog&);
 		void makeSound( void ) const;
 		const	Brain *getBrain();
 };
-
 
 #endif
