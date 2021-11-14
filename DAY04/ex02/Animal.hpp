@@ -11,14 +11,10 @@ class	Animal
 	public :
 		Animal();
 		Animal(const	Animal&);
-		~Animal();
+		virtual ~Animal();
 		Animal	&operator = (const Animal &);
 
-<<<<<<< HEAD
-		virtual void	makeSound( void ) const;
-=======
-		virtual	void	makeSound( void ) const;
->>>>>>> 9b7d6976413841d6c8f8db99ea90c8772def9116
+		virtual void	makeSound( void ) const = 0;
 		std::string	getType( void ) const;
 };
 

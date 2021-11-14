@@ -3,11 +3,7 @@
 Animal::Animal()
 {
 	std::cout << "Animal Default constructor Called" << std::endl;
-<<<<<<< HEAD
-	type = "animal";
-=======
 	type = "Animal";
->>>>>>> 9b7d6976413841d6c8f8db99ea90c8772def9116
 }
 
 Animal::Animal (const	Animal &an)

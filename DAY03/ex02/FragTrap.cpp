@@ -51,13 +51,3 @@ void	FragTrap::attack(std::string const &target)
 {
 	std::cout << "FragTrap " << Name << " attack " << target << ", causing " << Attackdamage << " points of damage!" << std::endl;
 }
-
-void	FragTrap::takeDamage(unsigned int amount)
-{
-	std::cout << "FragTrap " << Name << " Taken Damage of " << amount << std::endl;
-}
-
-void	FragTrap::beRepaired(unsigned int amount)
-{
-	std::cout << "FrapTrap " << Name << " Gets repaired by " << amount << std::endl;
-}
