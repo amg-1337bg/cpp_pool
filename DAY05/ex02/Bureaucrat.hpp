@@ -2,6 +2,8 @@
 #define BUREAUCRAT_H
 
 #include <iostream>
+class Bureaucrat;
+#include "Form.hpp"
 
 class	Bureaucrat
 {
@@ -28,6 +30,8 @@ class	Bureaucrat
 		{
 			const char* what() const throw();
 		};
+		
+		void	signForm(Form&);
 
 };
 

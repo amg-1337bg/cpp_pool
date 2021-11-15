@@ -51,6 +51,22 @@ int	Bureaucrat::getGrade() const
 	return (grade);
 }
 
+void	Bureaucrat::signForm(Form &f)
+{
+	if (f.getSigned())
+	{
+		std::cout << "The Form Already Signed" << std::endl;
+		return ;
+	}
+	if (grade > f.getGradeSigned())
+		std::cout << name << " Cannot Sign " << f.getName() << " because the minimum grade required is " << f.getGradeSigned() << std::endl;
+	else
+	{
+		f.setSign(true);
+		std::cout << name << " Signs " << f.getName() << std::endl;
+	}
+}
+
 std::ostream	&operator << (std::ostream &os, const Bureaucrat &b)
 {
 	os << b.getName() << " , bureaucrat grade " << b.getGrade();
