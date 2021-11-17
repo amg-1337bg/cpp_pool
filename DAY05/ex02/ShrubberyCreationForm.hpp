@@ -2,15 +2,22 @@
 #define SHRUBBERYCREATIONFORM_H
 
 #include <iostream>
-#include "Form.hpp" 
+#include <fstream>
+#include "Form.hpp"
 
 class ShrubberyCreationForm : public Form
 {
 	private:
-		
+		std::string	target;
+
 	public:
-		ShrubberyCreationForm();
+		ShrubberyCreationForm(const std::string);
+		ShrubberyCreationForm(const	ShrubberyCreationForm&);
+		ShrubberyCreationForm operator=(const ShrubberyCreationForm&);
+
 		~ShrubberyCreationForm();
+
+		void	execute(Bureaucrat const & executor) const;
 };
 
 

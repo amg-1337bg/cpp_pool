@@ -17,4 +17,9 @@ int main()
 
 	const	WrongAnimal* wrong = new WrongCat;
 	wrong->makeSound();
+
+	delete meta;
+	delete j;
+	delete i;
+	delete wrong;
 }

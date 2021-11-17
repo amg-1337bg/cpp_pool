@@ -16,6 +16,11 @@ const char *Form::GradeTooLowException::what() const throw()
 	return ("Grade Too Low");
 }
 
+const char *Form::NotSigned::what() const throw()
+{
+	return ("Form Not Signed");
+}
+
 Form::Form(const std::string name, const int gs, const int ge) : name(name), grade_signed(gs), grade_execute(ge)
 {
 	std::cout << "Parameter Constructor Called" << std::endl;
@@ -88,4 +93,18 @@ std::ostream &operator << (std::ostream &os, const Form &f)
 {
 	os << "form Named " << f.getName() << " need to be Signed (" << f.getGradeSigned() << ") and to Execute (" << f.getGradeExecute() << ")";
 	return (os);
+}
+
+void	Form::execute(Bureaucrat const &executor) const
+{
+	if (s)
+	{
+		if (executor.getGrade() <= grade_execute)
+			std::cout << name << " executed Successfully by " << executor.getName() << std::endl;
+		else
+			throw (Form::GradeTooLowException());
+			// std::cout << executor.getName() << " has not the required Grade to execute" << std::endl;
+	}
+	else
+		throw (Form::NotSigned());
 }

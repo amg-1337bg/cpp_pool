@@ -72,3 +72,13 @@ std::ostream	&operator << (std::ostream &os, const Bureaucrat &b)
 	os << b.getName() << " , bureaucrat grade " << b.getGrade();
 	return (os);
 }
+
+void	Bureaucrat::executeForm(Form const & form)
+{
+	if (!form.getSigned())
+		throw (Form::NotSigned());
+	if (grade <= form.getGradeExecute())
+		std::cout << name << " executes " << form.getName() << std::endl;
+	else
+		Bureaucrat::GradeTooLowException();
+}
