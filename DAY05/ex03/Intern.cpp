@@ -15,6 +15,7 @@ Form	*Intern::makeForm(std::string formName, std::string target)
 	{
 		if (check[i] == formName)
 		{
+			std::cout << "Intern creates " << check[i] << std::endl;
 			switch (i)
 			{
 				case 0:
