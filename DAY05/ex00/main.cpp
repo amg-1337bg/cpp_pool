@@ -30,5 +30,24 @@ int main()
 	{
 		std::cout << e.what() << std::endl;
 	}
+	try
+	{
+		Bureaucrat a("Bureau", 1);
+		a.increaseGrade();
+	}
+	catch(const std::exception& e)
+	{
+		std::cerr << e.what() << '\n';
+	}
+	try
+	{
+		Bureaucrat a("Bureau", 150);
+		a.decreaseGrade();
+	}
+	catch(const std::exception& e)
+	{
+		std::cerr << e.what() << '\n';
+	}
+	
 	return (0);
 }

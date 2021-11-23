@@ -1,10 +1,5 @@
 #include "PresidentialPardonForm.hpp"
 
-PresidentialPardonForm::PresidentialPardonForm() : Form ("PresidentialPardonForm", 25, 5)
-{
-	target = "Default";
-}
-
 PresidentialPardonForm::PresidentialPardonForm(std::string target) : Form ("PresidentialPardonForm", 25, 5)
 {
 	this->target = target;

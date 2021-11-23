@@ -18,7 +18,7 @@ class	Form
 		Form();
 		Form(const std::string, const int, const int);
 		Form(const Form&);
-		virtual ~Form() = 0;
+		virtual ~Form();
 		Form &operator=(const Form&);
 
 		class	GradeTooHighException : public std::exception
@@ -44,7 +44,7 @@ class	Form
 		bool		getSigned() const;
 
 		void	beSigned(const Bureaucrat&);
-		virtual void	execute(Bureaucrat const &executor) const;
+		virtual void	execute(Bureaucrat const &executor) const = 0;
 };
 
 std::ostream &operator << (std::ostream&, const Form&);

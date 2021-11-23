@@ -1,10 +1,5 @@
 #include "RobotoMyRequestForm.hpp"
 
-RobotoMyRequestForm::RobotoMyRequestForm() : Form ("RobotoMyRequestForm", 72, 45)
-{
-	target = "Default";
-}
-
 RobotoMyRequestForm::RobotoMyRequestForm(std::string target) : Form ("RobotoMyRequestForm", 72, 45)
 {
 	this->target = target;

@@ -9,14 +9,13 @@ class	RobotoMyRequestForm : public Form
 		std::string target;
 	
 	public :
-		RobotoMyRequestForm();
 		RobotoMyRequestForm(std::string);
 		RobotoMyRequestForm(const	RobotoMyRequestForm&);
 		~RobotoMyRequestForm();
 
 		RobotoMyRequestForm &operator = (const RobotoMyRequestForm&);
 		
-		void execute(Bureaucrat const & executor) const;
+		void	execute(Bureaucrat const & executor) const;
 };
 
 

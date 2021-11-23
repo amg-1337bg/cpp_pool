@@ -29,6 +29,9 @@ class	Bureaucrat
 			const char* what() const throw();
 		};
 
+		void	increaseGrade( void );
+		void 	decreaseGrade( void );
+
 };
 
 std::ostream & operator << (std::ostream &os, const Bureaucrat&);

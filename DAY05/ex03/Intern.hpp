@@ -3,17 +3,19 @@
 
 #include <iostream>
 #include "PresidentialPardonForm.hpp"
-#include "RobotomyRequestForm.hpp"
+#include "RobotoMyRequestForm.hpp"
 #include "ShrubberyCreationForm.hpp"
 
 class Intern
 {
 	public:
+	 	int i;
+		 int c,b,g;
 		Intern();
 		Intern (const Intern&);
 		~Intern();
 
-		Intern	&operator = (const Intern&);
+		// Intern	&operator = (const Intern&);
 
 		Form *makeForm(std::string, std::string);
 };

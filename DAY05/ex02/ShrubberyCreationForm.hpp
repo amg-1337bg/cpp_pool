@@ -11,7 +11,7 @@ class ShrubberyCreationForm : public Form
 		std::string	target;
 
 	public:
-		ShrubberyCreationForm(const std::string);
+		ShrubberyCreationForm(std::string);
 		ShrubberyCreationForm(const	ShrubberyCreationForm&);
 		ShrubberyCreationForm operator=(const ShrubberyCreationForm&);
 

@@ -1,6 +1,6 @@
 #include "ShrubberyCreationForm.hpp"
 
-ShrubberyCreationForm::ShrubberyCreationForm(const	std::string target) : Form("Shrubbery", 145, 137)
+ShrubberyCreationForm::ShrubberyCreationForm(std::string target) : Form("Shrubbery", 145, 137)
 {
 	this->target = target;
 }
@@ -18,9 +18,7 @@ ShrubberyCreationForm ShrubberyCreationForm::operator=(const ShrubberyCreationFo
 	return (*this);
 }
 
-ShrubberyCreationForm::~ShrubberyCreationForm()
-{
-}
+ShrubberyCreationForm::~ShrubberyCreationForm(){}
 
 void	ShrubberyCreationForm::execute(Bureaucrat const & executor) const
 {

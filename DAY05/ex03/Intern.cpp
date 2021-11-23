@@ -2,11 +2,11 @@
 
 Intern::Intern(){}
 
-Intern::Intern(const Intern &){}
+Intern::Intern(const Intern &){std::cout << "hello " << std::endl;}
 
 Intern::~Intern(){}
 
-Intern &Intern::operator=(const Intern &){ return(*this); }
+// Intern &Intern::operator=(const Intern &){  return(*this); }
 
 Form	*Intern::makeForm(std::string formName, std::string target)
 {	
