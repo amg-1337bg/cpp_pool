@@ -1,7 +1,6 @@
 #include <iostream>
 #include <sstream>
-#include <stdlib.h>
-#include <cmath>
+#include <limits>
 
 void	toChar(std::string str)
 {
@@ -32,11 +31,6 @@ void	toInt(std::string str)
 	std::stringstream stringstream(str);
 	stringstream >> num;
 	if(stringstream.fail())
-	{
-		std::cout << "int : Impossible" << std::endl;
-		return ;
-	}
-	if (num < std::numeric_limits<int>::min() || num > std::numeric_limits<int>::max())
 	{
 		std::cout << "int : Impossible" << std::endl;
 		return ;
