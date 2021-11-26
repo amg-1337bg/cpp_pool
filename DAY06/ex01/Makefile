@@ -7,7 +7,7 @@ SRC= main.cpp
 all: $(NAME)
 
 $(NAME): $(SRC) Makefile
-	clang++ $(FLAGS) $(SRC) -o $(NAME)
+	clang++ -g -fsanitize=address $(FLAGS) $(SRC) -o $(NAME)
 
 clean:
 	rm -rf $(NAME)

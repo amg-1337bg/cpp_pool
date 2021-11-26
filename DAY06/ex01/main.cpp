@@ -20,6 +20,7 @@ Data* deserialize(__intptr_t raw)
 
 int main()
 {
+	*c = 'h';
 	Data test;
 
 	test.x = 10;
