@@ -1,11 +1,14 @@
 #include "iter.hpp"
 
-void	toupp(std::string)
+void	toupp(char &str)
+{
+	str = 'h';
+}
 
 int main()
 {
-	std::string str = "hello";
+	char str[] = "hello";
 
-	iter<std::string>(str, str->length(), std::toupper());
-	str::cout << str << std::endl;
+	iter<char>(str, 5, swap);
+	std::cout << str << std::endl;
 }
