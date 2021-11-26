@@ -8,19 +8,18 @@ struct Data
 	char	c;
 };
 
-__intptr_t serialize(Data* ptr)
+uintptr_t serialize(Data* ptr)
 {
-	return (reinterpret_cast<__intptr_t>(ptr));
+	return (reinterpret_cast<uintptr_t>(ptr));
 }
 
-Data* deserialize(__intptr_t raw)
+Data* deserialize(uintptr_t raw)
 {
 	return (reinterpret_cast<Data*>(raw));
 }
 
 int main()
 {
-	*c = 'h';
 	Data test;
 
 	test.x = 10;
@@ -28,7 +27,7 @@ int main()
 	test.z = 677;
 	test.c = 'D';
 	
-	__intptr_t ptr = serialize(&test);
+	uintptr_t ptr = serialize(&test);
 	std::cout << *(int*)ptr << std::endl;
 	std::cout << *(int*)(ptr + 4) << std::endl;
 	std::cout << *(int*)(ptr + 8) << std::endl;
