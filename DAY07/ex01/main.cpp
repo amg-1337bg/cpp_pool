@@ -1,32 +1,41 @@
 #include "iter.hpp"
 
-void	toH(char &str)
-{
-	str = 'H';
-}
 
-void	printString(std::string &str)
+// class Awesome
+// {
+// public:
+// Awesome( void ) : _n( 42 ) { return; }
+// int get( void ) const { return this->_n; }
+// private:
+// int _n;
+// };
+// std::ostream & operator<<( std::ostream & o, Awesome const & rhs ) { o << rhs.get(); return o; }
+// template< typename T >
+// void print( T const & x ) { std::cout << x << std::endl; return; }
+
+
+void	printString(std::string const &str)
 {
 	std::cout << str << std::endl;
 }
 
-void	tohundred(int &i)
+void	printInt(int const &ints)
 {
-	i = 100;
+	std::cout << ints << std::endl;
 }
 
 int main()
 {
-	char str[] = "hello";
+	// char str[] = "hello";
 	std::string s[] = {"hello", "world", "how are you"};
 	int	i[] = {187, 12, 13};
 
-	iter<char>(str, 5, toH);
-	std::cout << str << std::endl;
-
 	iter<std::string>(s, 3, printString);
 
-	iter<int>(i, 3, tohundred);
-	for (size_t j = 0; j < 3; j++)
-		std::cout << i[j] << std::endl;
+	iter(i, 3, printInt);
+
+	// int tab[] = { 0, 1, 2, 3, 4 }; // <--- I never understood why you can't write int[] tab. Wouldn't that make more sense?
+	// Awesome tab2[5];
+	// iter( tab, 5, print );
+	// iter( tab2, 5, print );
 }
