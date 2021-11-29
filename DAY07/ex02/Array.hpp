@@ -25,23 +25,28 @@ class Array
 		{
 			*this = ar;
 		}
-		T	&operator = (const Array &ar)
+		Array	&operator = (const Array &ar)
 		{
-			size_t N = ar.size();
-			var = new T[N];
+			length = ar.size();
+			var = new T[length];
 			return *this;
 		}
 		~Array()
 		{
-			std::cout << "Destructor Called" << std::endl;
-			if (var)
-				delete[] var;
+			delete[] var;
 		}
+		class out_of_range : public std::exception
+		{
+			const char* what() const throw()
+			{
+				return "Out Of Range";
+			}
+		};
 
 		T	&operator[] (size_t i)
 		{
 			if (i < 0 || i >= size())
-				throw std::exception();
+				throw out_of_range();
 			return var[i];
 		}
 
