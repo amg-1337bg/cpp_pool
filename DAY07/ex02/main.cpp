@@ -18,10 +18,12 @@ int main()
 	try
 	{
 		std::cout << ints[0] << std::endl;
-		std::cout << ints[0] << std::endl;
 		hello[5].i = 5586;
+		tmp1 = hello;
+		std::cout << ints[0] << std::endl;
 		std::cout << tmp1[0].i << std::endl;
-		std::cout << hello[5].i << std::endl;
+		std::cout << hello[2].i << std::endl;
+		std::cout << tmp1[2].i << std::endl;
 		std::cout << ch[0] << std::endl;
 		std::cout << ch.size() << std::endl;
 	}

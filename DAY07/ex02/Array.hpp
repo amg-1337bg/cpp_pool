@@ -23,17 +23,23 @@ class Array
 		}
 		Array(const Array &ar)
 		{
+			var = NULL;
 			*this = ar;
 		}
 		Array	&operator = (const Array &ar)
 		{
 			length = ar.size();
+			if (var)
+				delete [] var;
 			var = new T[length];
+			for (size_t i = 0; i < length; i++)
+				var[i] = ar.var[i];
 			return *this;
 		}
 		~Array()
 		{
-			delete[] var;
+			if (var)
+				delete[] var;
 		}
 		class out_of_range : public std::exception
 		{
