@@ -2,6 +2,7 @@
 #define SPAN_HPP
 
 #include <iostream>
+#include <algorithm>
 
 class Span
 {
@@ -25,6 +26,9 @@ class Span
         };
         unsigned int getLength() const;
         void    addNumber(int);
+
+        int     shortestSpan( void ) const;
+        int     longestSpan( void ) const;
 };
 
 #endif
