@@ -3,11 +3,12 @@
 
 #include <iostream>
 #include <algorithm>
+#include <vector>
 
 class Span
 {
     private:
-        int *numbers;
+        std::vector<int> numbers;
         unsigned int current;
         unsigned int N;
     
@@ -24,7 +25,14 @@ class Span
                 return "Out Of Limits";
             }
         };
-        unsigned int getLength() const;
+        class Error : public std::exception
+        {
+            const char* what() const throw()
+            {
+                return "Can't Find Span";
+            }
+        };
+
         void    addNumber(int);
 
         int     shortestSpan( void ) const;

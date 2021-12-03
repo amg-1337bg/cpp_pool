@@ -6,13 +6,14 @@ int main()
 
     try
     {
-        sp.addNumber(12);
-        sp.addNumber(15);
-        sp.addNumber(1);
-        sp.addNumber(0);
-        sp.addNumber(19);
+        // sp.addNumber(12);
+        // sp.addNumber(15);
+        // sp.addNumber(1);
+        // sp.addNumber(0);
+        // sp.addNumber(19);
 
         std::cout << sp.longestSpan() << std::endl;
+        std::cout << sp.shortestSpan() << std::endl;
     }
     catch(const std::exception& e)
     {
