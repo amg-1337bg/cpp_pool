@@ -28,10 +28,20 @@ void    Span::addNumber(int i)
     if (current == N)
         throw Span::Out_Of_Limits();
     else
+    {
         numbers.push_back(i);
+        current++;
+    }
 }
 
-int Span::shortestSpan( void ) const
+void    Span::addRange(int *begin, int *end)
+{
+    numbers = std::vector<int>(begin, end);
+    if (numbers.size() > N)
+        throw Span::Out_Of_Limits();
+}
+
+int Span::shortestSpan( void ) 
 {
     int min;
 
@@ -39,12 +49,12 @@ int Span::shortestSpan( void ) const
         throw Span::Error();
     std::sort(numbers.begin(), numbers.end());
     min = numbers[1] - numbers[0];
-    for (size_t i = 0; i < N; i++)
+    for (size_t i = 0; i < N - 1; i++)
     {
         if (numbers[i + 1] - numbers[i] < min)
             min = numbers[i + 1] - numbers[i];
     }
-    return 0;
+    return min;
 }
 
 int Span::longestSpan( void ) const
@@ -55,5 +65,4 @@ int Span::longestSpan( void ) const
     int max = *std::max_element(numbers.begin(), numbers.end());
 
     return max - min;
-    return 0;
 }

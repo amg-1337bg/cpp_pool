@@ -2,8 +2,8 @@
 #define SPAN_HPP
 
 #include <iostream>
-#include <algorithm>
 #include <vector>
+#include <algorithm>
 
 class Span
 {
@@ -34,8 +34,9 @@ class Span
         };
 
         void    addNumber(int);
+        void    addRange(int *, int*);
 
-        int     shortestSpan( void ) const;
+        int     shortestSpan( void ) ;
         int     longestSpan( void ) const;
 };
 
